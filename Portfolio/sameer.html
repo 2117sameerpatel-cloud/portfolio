@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sameer Patel — Portfolio</title>
+  <meta name="description" content="Portfolio of Sameer Patel" />
+  <style>
+    :root {
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#98a0b3;
+      --accent:#7c3aed;
+      --glass: rgba(255,255,255,0.05);
+      --text:#e6eef8;
+    }
+    body.light {
+      --bg:#f4f4f9;
+      --card:#ffffff;
+      --muted:#555;
+      --accent:#7c3aed;
+      --glass: rgba(0,0,0,0.05);
+      --text:#1a1a1a;
+    }
+    *{box-sizing:border-box;transition: all 0.3s ease;}
+    body{
+      margin:0;background:var(--bg);
+      color:var(--text);line-height:1.45;padding:32px 16px;
+      display:flex;justify-content:center;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    }
+    .site{width:100%;max-width:1100px}
+    header{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:28px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#4f46e5);display:grid;place-items:center;font-weight:700;color:white;font-size:18px;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px;font-weight:600;font-size:14px}
+    nav a:hover{color:var(--text);background:var(--glass)}
+    .cta{background:linear-gradient(90deg,var(--accent),#5b21b6);padding:8px 12px;border-radius:10px;color:white;font-weight:700;text-decoration:none}
+    .hero{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:28px;border-radius:18px;display:grid;grid-template-columns:1fr 380px;gap:24px;align-items:center;margin-bottom:28px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    .hero-left h1{font-size:34px;margin:0 0 8px}
+    .hero-left p{margin:0;color:var(--muted)}
+    .hero-right{text-align:center;padding:12px}
+    .avatar{width:220px;height:220px;border-radius:22px;overflow:hidden;margin:0 auto 14px;box-shadow:0 8px 22px rgba(0,0,0,0.5)}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    .card{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,0.4);margin-bottom:26px}
+    footer{color:var(--muted);text-align:center;padding:18px 0;font-size:13px}
+
+    /* Splash (welcome) page */
+    #splash {
+      position:fixed;top:0;left:0;width:100%;height:100%;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      background:var(--bg);
+      z-index:1000;text-align:center;
+    }
+    #splash img{
+      width:280px;height:280px;border-radius:28px;object-fit:cover;margin-bottom:18px;
+      box-shadow:0 8px 26px rgba(0,0,0,0.5);
+    }
+    #splash button{
+      margin-top:20px;padding:12px 24px;border:none;
+      border-radius:10px;background:linear-gradient(90deg,var(--accent),#5b21b6);
+      color:white;font-weight:700;cursor:pointer;
+    }
+
+    /* Toggle Button */
+    #toggleMode {
+      cursor:pointer;
+      background:var(--glass);
+      padding:6px 12px;
+      border-radius:8px;
+      font-size:13px;
+      font-weight:600;
+      color:var(--text);
+    }
+  </style>
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splash">
+    <img src="C:/Users/2117s/Desktop/IMG_2622.jpg" alt="Sameer Patel">
+    <h1>Hey, it’s Sameer Patel 👋</h1>
+    <p>Welcome to my portfolio</p>
+    <button onclick="enterSite()">Enter</button>
+  </div>
+
+  <!-- Main Site -->
+  <div class="site" style="display:none" id="main-site">
+    <header>
+      <div class="brand">
+        <div class="logo">SP</div>
+        <div>
+          <div style="font-weight:700">Sameer Patel</div>
+          <div style="font-size:13px;color:var(--muted)">Networking Enthusiast</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#about">About</a>
+        <a href="#contact" class="cta">Contact</a>
+        <div id="toggleMode">🌙 Dark</div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero card" id="home">
+        <div class="hero-left">
+          <h1>Hi, I’m <span style="color:var(--accent)">Sameer Patel</span></h1>
+          <p>I’m passionate about networking and technology. I enjoy learning how systems connect, communicate, and solve real-world problems. Networking fascinates me because it’s the backbone of how the digital world functions.</p>
+        </div>
+        <div class="hero-right">
+          <div class="avatar">
+            <img src="C:/Users/2117s/Desktop/IMG_2622.jpg" alt="Sameer Patel">
+          </div>
+          <div style="font-weight:700">Sameer Patel</div>
+          <div style="font-size:13px;color:var(--muted)">Toronto, Canada</div>
+        </div>
+      </section>
+
+      <section id="about" class="card">
+        <h2>About Me</h2>
+        <p style="color:var(--muted)">
+          I have a strong interest in networking technologies — from understanding IP addressing to troubleshooting real-world connectivity issues. I believe networks are the hidden power that keep businesses, services, and people connected every second of the day.
+        </p>
+      </section>
+
+      <section id="contact" class="card">
+        <h2>Contact & Socials</h2>
+        <p style="color:var(--muted)">Feel free to reach out or connect with me online!</p>
+        <div style="margin-top:12px;color:var(--muted)">
+          <div>Email: <strong style="color:var(--text)">sameerpatel2117@gmail.com</strong></div>
+          <div>Phone: <strong style="color:var(--text)">647-285-2174</strong></div>
+          <div>Location: Toronto, Canada</div>
+          <div style="margin-top:12px;">
+            <a href="https://www.linkedin.com" target="_blank" style="color:#0A66C2;font-weight:600;text-decoration:none;">LinkedIn</a> | 
+            <a href="https://www.instagram.com/sameer_patel2712?igsh=c3hqbHg3c2JvNmZr&utm_source=qr" target="_blank" style="color:#E1306C;font-weight:600;text-decoration:none;">Instagram</a> | 
+            <a href="https://wa.me/16472852174" target="_blank" style="color:#25D366;font-weight:600;text-decoration:none;">WhatsApp</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Sameer Patel — Built with HTML & CSS
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function enterSite(){
+      document.getElementById('splash').style.display='none';
+      document.getElementById('main-site').style.display='block';
+    }
+
+    // Dark/Light mode toggle
+    const toggleBtn = document.getElementById("toggleMode");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      if(document.body.classList.contains("light")){
+        toggleBtn.textContent = "🌞 Light";
+      } else {
+        toggleBtn.textContent = "🌙 Dark";
+      }
+    });
+  </script>
+</body>
+</html>
